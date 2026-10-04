@@ -1,0 +1,1445 @@
+{
+  "schema": 1,
+  "scope": "exact source component, synthetic graph, fixed fixtures, no model/network",
+  "upstream_commit": "7952c5f8a956fe6a44228a6a7d528a35340e7c87",
+  "source_sha256": "ef42f61fbfef47e60dbecfd30865ad1bf0557889c78eaca75579763c242319ac",
+  "counts": {
+    "source": {
+      "rows": 19,
+      "sentinel_changed": 5,
+      "errors": 4
+    },
+    "literal_plan": {
+      "rows": 19,
+      "sentinel_changed": 0,
+      "errors": 11
+    }
+  },
+  "cases": [
+    {
+      "id": "ordinary",
+      "family": "supported",
+      "command": "graph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "fenced_ordinary",
+      "family": "supported",
+      "command": "```python\ngraph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a')\n```",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "inline_ordinary",
+      "family": "supported",
+      "command": "`graph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a')`",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "keywords",
+      "family": "supported",
+      "command": "graph.add_root_node(node_content='weather', node_name='r'); graph.node('r')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "r"
+            ],
+            [
+              "node",
+              "r"
+            ]
+          ],
+          "nodes": {
+            "r": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "r": []
+          },
+          "result": [
+            [
+              {
+                "content": "weather",
+                "type": "root"
+              }
+            ],
+            {
+              "r": {
+                "content": "weather",
+                "type": "root"
+              }
+            },
+            {
+              "r": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "r"
+            ],
+            [
+              "node",
+              "r"
+            ]
+          ],
+          "nodes": {
+            "r": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "r": []
+          },
+          "result": [
+            [
+              {
+                "content": "weather",
+                "type": "root"
+              }
+            ],
+            {
+              "r": {
+                "content": "weather",
+                "type": "root"
+              }
+            },
+            {
+              "r": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "unicode_literal",
+      "family": "supported",
+      "command": "graph.add_root_node('café 雨 😀'); graph.node('root')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "café 雨 😀",
+              "root"
+            ],
+            [
+              "node",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "café 雨 😀",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [
+              {
+                "content": "café 雨 😀",
+                "type": "root"
+              }
+            ],
+            {
+              "root": {
+                "content": "café 雨 😀",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "café 雨 😀",
+              "root"
+            ],
+            [
+              "node",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "café 雨 😀",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [
+              {
+                "content": "café 雨 😀",
+                "type": "root"
+              }
+            ],
+            {
+              "root": {
+                "content": "café 雨 😀",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "quoted_marker",
+      "family": "supported",
+      "command": "graph.add_root_node(\"sentinel.append('NOTE')\"); graph.node('root')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "sentinel.append('NOTE')",
+              "root"
+            ],
+            [
+              "node",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "sentinel.append('NOTE')",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [
+              {
+                "content": "sentinel.append('NOTE')",
+                "type": "root"
+              }
+            ],
+            {
+              "root": {
+                "content": "sentinel.append('NOTE')",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "sentinel.append('NOTE')",
+              "root"
+            ],
+            [
+              "node",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "sentinel.append('NOTE')",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [
+              {
+                "content": "sentinel.append('NOTE')",
+                "type": "root"
+              }
+            ],
+            {
+              "root": {
+                "content": "sentinel.append('NOTE')",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "family": "supported",
+      "command": "",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": [
+            [],
+            {},
+            {}
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": [
+            [],
+            {},
+            {}
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "extra_before",
+      "family": "extra_statement",
+      "command": "sentinel.append('NOTE'); graph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [
+            "NOTE"
+          ],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extra_after",
+      "family": "extra_statement",
+      "command": "graph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a'); sentinel.append('NOTE')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [
+            "NOTE"
+          ],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fenced_extra",
+      "family": "extra_statement",
+      "command": "```python\nsentinel.append('NOTE'); graph.add_root_node('weather'); graph.add_node('a', 'rain'); graph.add_edge('root', 'a'); graph.node('a')\n```",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [
+            "NOTE"
+          ],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "add_node",
+              "a",
+              "rain"
+            ],
+            [
+              "add_edge",
+              "root",
+              "a"
+            ],
+            [
+              "node",
+              "a"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            },
+            "a": {
+              "content": "rain",
+              "type": "searcher"
+            }
+          },
+          "edges": {
+            "root": [
+              "a"
+            ],
+            "a": []
+          },
+          "result": [
+            [
+              {
+                "content": "rain",
+                "type": "searcher"
+              }
+            ],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              },
+              "a": {
+                "content": "rain",
+                "type": "searcher"
+              }
+            },
+            {
+              "root": [
+                "a"
+              ],
+              "a": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "extra_before_runtime_error",
+      "family": "extra_statement",
+      "command": "sentinel.append('NOTE'); graph.node('missing')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [
+            "NOTE"
+          ],
+          "events": [
+            [
+              "node",
+              "missing"
+            ]
+          ],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "KeyError",
+            "message": "'missing'"
+          }
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prefix_then_extra",
+      "family": "extra_statement",
+      "command": "graph.add_root_node('weather'); sentinel.append('NOTE')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [
+            "NOTE"
+          ],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prefix_then_assignment",
+      "family": "restricted_python",
+      "command": "graph.add_root_node('weather'); scratch = 1",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "only graph operation statements"
+          }
+        }
+      ]
+    },
+    {
+      "id": "computed_literal",
+      "family": "restricted_python",
+      "command": "graph.add_root_node('wea' + 'ther')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [],
+            {
+              "root": {
+                "content": "weather",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "literal strings only"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nested_expression",
+      "family": "restricted_python",
+      "command": "graph.add_root_node('weather'.upper())",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "WEATHER",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "WEATHER",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [],
+            {
+              "root": {
+                "content": "WEATHER",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "literal strings only"
+          }
+        }
+      ]
+    },
+    {
+      "id": "unknown_graph_method",
+      "family": "restricted_python",
+      "command": "graph.nodes.clear()",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": [
+            [],
+            {},
+            {}
+          ],
+          "error": null
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "unknown operation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "selector_in_literal",
+      "family": "selector_limit",
+      "command": "graph.add_root_node(\"graph.node('missing')\")",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "graph.node('missing')",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "graph.node('missing')",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": null,
+          "error": {
+            "type": "KeyError",
+            "message": "'missing'"
+          }
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "graph.node('missing')",
+              "root"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "graph.node('missing')",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": [
+            [],
+            {
+              "root": {
+                "content": "graph.node('missing')",
+                "type": "root"
+              }
+            },
+            {
+              "root": []
+            }
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "prefix_then_missing_node",
+      "family": "runtime_limit",
+      "command": "graph.add_root_node('weather'); graph.node('missing')",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "node",
+              "missing"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": null,
+          "error": {
+            "type": "KeyError",
+            "message": "'missing'"
+          }
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [
+            [
+              "add_root_node",
+              "weather",
+              "root"
+            ],
+            [
+              "node",
+              "missing"
+            ]
+          ],
+          "nodes": {
+            "root": {
+              "content": "weather",
+              "type": "root"
+            }
+          },
+          "edges": {
+            "root": []
+          },
+          "result": null,
+          "error": {
+            "type": "KeyError",
+            "message": "'missing'"
+          }
+        }
+      ]
+    },
+    {
+      "id": "syntax_error",
+      "family": "malformed",
+      "command": "graph.add_root_node(",
+      "observations": [
+        {
+          "method": "source",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "SyntaxError",
+            "message": "'(' was never closed (<string>, line 1)"
+          }
+        },
+        {
+          "method": "literal_plan",
+          "sentinel": [],
+          "events": [],
+          "nodes": {},
+          "edges": {},
+          "result": null,
+          "error": {
+            "type": "Rejected",
+            "message": "parse error"
+          }
+        }
+      ]
+    }
+  ]
+}

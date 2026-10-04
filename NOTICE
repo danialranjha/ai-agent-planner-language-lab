@@ -1,0 +1,9 @@
+This research harness includes the unmodified public MindSearch graph.py source
+as vendor/graph.py.txt. MindSearch copyright 2024 Shanghai AI Laboratory.
+Upstream source is licensed under Apache License 2.0; the complete supplied
+license is in vendor/LICENSE. Source pin and content hashes are in vendor/source.json.
+
+The lab extracts the original ExecutionAction class without modifying its AST.
+Its inert graph, fixed-input harness, proposed literal-plan interpreter, tests,
+and documentation are independent additions distributed under Apache License 2.0.
+They are not an upstream patch or an endorsement by the original authors.
